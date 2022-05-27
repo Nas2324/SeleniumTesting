@@ -7,17 +7,17 @@ Feature: New User Creation
 
   Scenario:Positive Creation
 
-    When he enters "Atanas"for firstname and "Todorov" for lastname and "alreadyregistered@abv.bg" and personal phonenumber "0877456123" and  pasword "123456" and for repeatpassword "123456"
+    When he enters "Atanas"for firstname and "Todorov" for lastname and "alreadyregistered@abv.bg" and personal phonenumber "0877456123" and  password "123456" and for repeatpassword "123456"
     Then ensure the new account is create successfully whit "Your Account Has Been Created!" message
 
   Scenario:Negative Creation
 
-    When he enters "Atanas"for firstname and "Todorov" for lastname and "alreadyregistered@abv.bg" and personal phonenumber "0877456123" and  pasword "123456" and for repeatpassword "123456"
+    When he enters "Atanas"for firstname and "Todorov" for lastname and "alreadyregistered@abv.bg" and personal phonenumber "0877456123" and  password "123456" and for repeatpassword "123456"
     Then ensure the new account is failure whit message "Warning: E-Mail Address is already registered!" is displayed
 
   Scenario Outline: data driven negative
 
-    When he enters "<name>"for firstname and "<surname>" for lastname and "<email>" and personal phonenumber "<phone>" and  pasword "<pass>" and for repeatpassword "<repass>"
+    When he enters "<name>"for firstname and "<surname>" for lastname and "<email>" and personal phonenumber "<phone>" and  password "<pass>" and for repeatpassword "<repass>"
     Then ensure the new account is failure whit message "<expected_message_failure>" is displayed
     Examples:
 

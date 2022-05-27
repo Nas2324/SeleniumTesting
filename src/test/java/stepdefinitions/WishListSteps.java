@@ -1,4 +1,4 @@
-package testrunners;
+package stepdefinitions;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
@@ -25,13 +25,18 @@ public class WishListSteps {
     public void tearDown(){
         Browser.quit();
     }
+    /**
+     * Invoking this method will navigate you to the user area of the project
+     */
 
     @Given("user open the browser")
     public void userOpenTheBrowser() {
 
         Browser.driver.get("http://shop.pragmatic.bg/");
     }
-
+    /**
+     * With this method user will navigate in user area
+     */
     @And("he navigate to login page")
     public void heNavigateToLoginPage() {
 
@@ -39,16 +44,24 @@ public class WishListSteps {
         actions.moveToElement(Browser.driver.findElement(By.cssSelector("[title^='My Account']"))).click().build().perform();
         Browser.driver.findElement(By.linkText("Login")).click();
     }
-
+    /**
+     * With this method user will log in with valid credentials
+     * then enter his username and password in the user area
+     * @param email existing email of the user
+     * @param password existing password of the user
+     */
 
     @Given("user will enter his email {string} and password {string} on the login page")
-    public void userWillEnterHisEmailAndPasswordOnTheLoginPage(String email, String pasword) {
+    public void userWillEnterHisEmailAndPasswordOnTheLoginPage(String email, String password) {
 
         Browser.driver.findElement(By.id("input-email")).sendKeys(email);
-        Browser.driver.findElement(By.name("password")).sendKeys(pasword);
+        Browser.driver.findElement(By.name("password")).sendKeys(password);
         Browser.driver.findElement(By.xpath("//div/div[2]/div/form/input")).click();
     }
 
+    /**
+     * With this method user will navigate in user area and add a product to Wishlist
+     */
     @And("he  go to Product page and add a product to Wishlist")
     public void heGoToProductPageAndAddAProductToWishlist() {
 
@@ -56,14 +69,18 @@ public class WishListSteps {
         Browser.driver.findElement(By.xpath("//div[2]/div[4]/div/div[3]/button[2]")).click();
         Browser.driver.findElement(By.id("wishlist-total")).click();
     }
-
+    /**
+     * Check the product is add in the Wishlist
+     */
     @And("And he will check if the product is added to the Wishlist")
     public void andHeWillCheckIfTheProductIsAddedToTheWishlist() {
 
         Browser.driver.findElement(By.xpath("//*[@id= 'content'] //*[contains(text(), 'Product 3')]")).getText();
         System.out.println(Browser.driver.findElement(By.xpath("//*[@id= 'content'] //*[contains(text(), 'Product 3')]")).getText());
     }
-
+    /**
+     * Add the product to Cart from Wishlist
+     */
     @When("he add the product from WishLIst to Cart")
     public void heAddTheProductFromWishLIstToCart() {
 
@@ -79,6 +96,9 @@ public class WishListSteps {
 
     }
 
+    /**
+     * Remove the product from Cart
+     */
     @And("he remove the product from the Cart")
     public void heRemoveTheProductFromTheCart() {
 
@@ -91,6 +111,10 @@ public class WishListSteps {
         Browser.driver.findElement(By.xpath("//div/div/a")).click();
     }
 
+    /**
+     * User is successful Logout
+     * @param expectedLogoutText
+     */
 
     @Then("he logout with confirm message {string}")
     public void heLogoutWithConfirmMessage(String expectedLogoutText) {
