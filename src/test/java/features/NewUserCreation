@@ -4,7 +4,7 @@ Feature: New User Creation
   Background:
     Given the user open the browser
     And ne go to account creation Page
-@regression @smoke @functional
+
   Scenario:Positive Creation
 
     When he enters "Atanas"for firstname and "Todorov" for lastname and "alreadyregistered@abv.bg" and personal phonenumber "0877456123" and  password "123456" and for repeatpassword "123456"
