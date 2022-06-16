@@ -6,13 +6,18 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import tools.Browser;
 import tools.WaitTool;
+
+import java.io.File;
 
 public class WishListSteps {
 
@@ -126,6 +131,23 @@ public class WishListSteps {
         Assert.assertEquals(successfulLogoutText, expectedLogoutText);
 
         System.out.println(Browser.driver.findElement(By.xpath("//*[@id=\"content\"]/p[1]")).getText());
+
+
+
+        /**
+         *Screenshot that User is sucssesuful Logout
+         */
+
+        try {
+            TakesScreenshot ts = (TakesScreenshot) Browser.driver;
+
+            File scrFile = ts.getScreenshotAs(OutputType.FILE);
+            FileUtils.copyFile(scrFile, new File("C:\\Users\\User\\testpic\\main_pic.png"));
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         Browser.driver.findElement(By.linkText("Continue")).click();
     }
+
+
 }

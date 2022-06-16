@@ -65,6 +65,12 @@ formatter.before({
 formatter.before({
   "status": "passed"
 });
+formatter.before({
+  "status": "passed"
+});
+formatter.before({
+  "status": "passed"
+});
 formatter.step({
   "name": "user open the browser",
   "keyword": "Given "
@@ -148,6 +154,12 @@ formatter.match({
   "location": "WishListSteps.heLogoutWithConfirmMessage(String)"
 });
 formatter.result({
+  "status": "passed"
+});
+formatter.after({
+  "status": "passed"
+});
+formatter.after({
   "status": "passed"
 });
 formatter.after({
