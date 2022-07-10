@@ -31,6 +31,10 @@ formatter.step({
 });
 formatter.step({
   "name": "admin change the status of review to Enable",
+  "keyword": "And "
+});
+formatter.step({
+  "name": "user check if the review is available",
   "keyword": "Then "
 });
 formatter.examples({
@@ -138,10 +142,20 @@ formatter.result({
 });
 formatter.step({
   "name": "admin change the status of review to Enable",
-  "keyword": "Then "
+  "keyword": "And "
 });
 formatter.match({
   "location": "IphoneReviewSteps.adminChangeTheStatusOfReviewToEnable()"
+});
+formatter.result({
+  "status": "passed"
+});
+formatter.step({
+  "name": "user check if the review is available",
+  "keyword": "Then "
+});
+formatter.match({
+  "location": "IphoneReviewSteps.userCheckIfTheReviewIsAvailable()"
 });
 formatter.result({
   "status": "passed"

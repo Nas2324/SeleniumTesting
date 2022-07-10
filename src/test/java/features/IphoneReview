@@ -11,7 +11,8 @@ Feature: As a satisfied user,
     Then user verify successful review creation with expected message <message>
     Given admin log and navigate to review section
     When admin check that review with name <name> and reviewText <reviewText>
-    Then admin change the status of review to Enable
+    And admin change the status of review to Enable
+    Then user check if the review is available
     Examples:
       | name     | reviewText                                 | message                     |
       | "Atanas" | "One of the best models,Perfect machine:)" | "Thank you for your review" |

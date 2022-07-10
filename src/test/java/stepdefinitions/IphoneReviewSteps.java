@@ -8,6 +8,7 @@ import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.openqa.selenium.By;
 import tools.Browser;
 import userarea.IphonePage;
 import utils.HomePageHeaderNavigation;
@@ -65,11 +66,23 @@ public class IphoneReviewSteps {
         PageReviews.checkReviewExist("Atanas", "One of the best models,Perfect machine:)");
     }
 
-
-
-    @Then("admin change the status of review to Enable")
+    @And("admin change the status of review to Enable")
     public void adminChangeTheStatusOfReviewToEnable() {
 
         PageReviews.enableReview();
+
     }
+
+
+    @Then("user check if the review is available")
+    public void userCheckIfTheReviewIsAvailable() {
+
+        HomePageHeaderNavigation homePageHeaderNavigation = new HomePageHeaderNavigation();
+        homePageHeaderNavigation.goToHomePage();
+        homePageHeaderNavigation.pickPhonesAndPDAs();
+        IphonePage.iPhoneAndReview();
+        System.out.println(Browser.driver.findElement(By.xpath("//*[@id=\"review\"]/table/tbody/tr[2]/td/p")).getText());
+    }
+
+
 }
