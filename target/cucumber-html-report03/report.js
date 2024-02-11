@@ -10,7 +10,7 @@ formatter.scenarioOutline({
   "keyword": "Scenario Outline"
 });
 formatter.step({
-  "name": "he fulfill username \u003cusrname\u003e and fulfill password \u003cpasword\u003e",
+  "name": "he fulfill username \u003cusername\u003e and fulfill password \u003cpassword\u003e",
   "keyword": "When "
 });
 formatter.step({
@@ -30,7 +30,7 @@ formatter.step({
   "keyword": "And "
 });
 formatter.step({
-  "name": "he verify the New Voucher is created with Succss \u003cSuccess\u003e and notCreated \u003cnotCreated\u003e message",
+  "name": "he verify the New Voucher is created with Successfully \u003cSuccess\u003e and notCreated \u003cnotCreated\u003e message",
   "keyword": "Then "
 });
 formatter.examples({
@@ -40,8 +40,8 @@ formatter.examples({
   "rows": [
     {
       "cells": [
-        "usrname",
-        "pasword",
+        "username",
+        "password",
         "text",
         "code",
         "failure",
@@ -51,7 +51,7 @@ formatter.examples({
         "ToName",
         "ToEmail",
         "Amount",
-        "Success",
+        "Successfully",
         "notCreated"
       ]
     },
@@ -131,7 +131,8 @@ formatter.match({
   "location": "GiftVoucherSteps.heAssertIfTheVoucherExistWithExistingCodeAndMessageIfFailure(String,String)"
 });
 formatter.result({
-  "status": "passed"
+  "error_message": "java.lang.AssertionError: The voucher does not exist expected [2356] but found [njgfhfh]\r\n\tat org.testng.Assert.fail(Assert.java:96)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\r\n\tat org.testng.Assert.assertEquals(Assert.java:118)\r\n\tat org.testng.Assert.assertEquals(Assert.java:453)\r\n\tat stepdefinitions.GiftVoucherSteps.heAssertIfTheVoucherExistWithExistingCodeAndMessageIfFailure(GiftVoucherSteps.java:88)\r\n\tat ✽.he assert if the voucher exist with existing code \"2356\" and message if failure \"The voucher does not exist\"(src/test/java/features/GiftVoucher:11)\r\n",
+  "status": "failed"
 });
 formatter.step({
   "name": "he delete the Voucher  FromName \"Atanas Yordanov\"",
@@ -141,7 +142,7 @@ formatter.match({
   "location": "GiftVoucherSteps.heDeleteTheVoucherFromName(String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
   "name": "he create a new voucher with  Code \"ForRy\" and FromName \"Atanas Yordanov\" and FromEmail\"alreadyregistered@abv.bg\" for ToName \"Radost Yordanova\" and ToEmail \"radiyo@abv.bg\" and Amount \"300\"",
@@ -151,17 +152,15 @@ formatter.match({
   "location": "GiftVoucherSteps.heCreateANewVoucherWithCodeAndFromNameAndFromEmailForToNameAndToEmailAndAmount(String,String,String,String,String,String)"
 });
 formatter.result({
-  "status": "passed"
+  "status": "skipped"
 });
 formatter.step({
-  "name": "he verify the New Voucher is created with Succss \"Success: You have modified vouchers!\" and notCreated \"Voucher not created\" message",
+  "name": "he verify the New Voucher is created with Successfully \u003cSuccess\u003e and notCreated \"Voucher not created\" message",
   "keyword": "Then "
 });
-formatter.match({
-  "location": "GiftVoucherSteps.heVerifyTheNewVoucherIsCreatedWithSuccssAndNotCreatedMessage(String,String)"
-});
+formatter.match({});
 formatter.result({
-  "status": "passed"
+  "status": "undefined"
 });
 formatter.after({
   "status": "passed"

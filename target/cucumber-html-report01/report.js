@@ -64,8 +64,7 @@ formatter.match({
   "location": "userCreation.ensureTheNewAccountIsCreateSuccessfullyWhitMessage(String)"
 });
 formatter.result({
-  "error_message": "java.lang.AssertionError: expected [Your Account Has Been Created!] but found [Register Account]\r\n\tat org.testng.Assert.fail(Assert.java:96)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\r\n\tat org.testng.Assert.assertEqualsImpl(Assert.java:137)\r\n\tat org.testng.Assert.assertEquals(Assert.java:118)\r\n\tat org.testng.Assert.assertEquals(Assert.java:453)\r\n\tat org.testng.Assert.assertEquals(Assert.java:463)\r\n\tat stepdefinitions.userCreation.ensureTheNewAccountIsCreateSuccessfullyWhitMessage(userCreation.java:75)\r\n\tat ✽.ensure the new account is create successfully whit \"Your Account Has Been Created!\" message(src/test/java/features/NewUserCreation:11)\r\n",
-  "status": "failed"
+  "status": "passed"
 });
 formatter.after({
   "status": "passed"

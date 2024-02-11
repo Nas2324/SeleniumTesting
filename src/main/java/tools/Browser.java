@@ -1,10 +1,8 @@
 package tools;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
 
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
@@ -20,11 +18,16 @@ public class Browser {
 
     public static void setup(){
 
-        ChromeOptions co = new ChromeOptions();
-        co.addArguments("--remote-allow-origins=*");
+
         WebDriverManager.chromedriver().setup();
-        driver = new ChromeDriver(co);
-        driver.manage().window().maximize();
+        driver = new ChromeDriver(); //Creates new browser instance
+        driver.manage().window().maximize(); //Maximizes browser
+
+//        ChromeOptions co = new ChromeOptions();
+//        co.addArguments("--remote-allow-origins=*");
+//        WebDriverManager.chromedriver().setup();
+//        driver = new ChromeDriver(co);
+//        driver.manage().window().maximize();
     }
 
     /**
